@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {box-sizing: border-box}
+
+/* Set height of body and the document to 100% */
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    position: -ms-page;
+    font-family: Arial;
+}
+
+/* Style tab links */
+.tablink {
+    background-color: #555;
+    color: white;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    font-size: 17px;
+    width: 25%;
+}
+
+.tablink:hover {
+    background-color: #777;
+}
+
+/* Style the tab content (and add height:100% for full page content) */
+.tabcontent {
+    color: black;
+    display: none;
+    padding: 70px 40px;
+    height: 100%;
+}
+
+.box1{
+    margin: 40px;
+    padding: 40px;
+    width: 95%;
+    height: 70%;
+    background: white;
+
+}
+
+#Home {background-color: rgb(189, 21, 21);height: 100em}
+#Process {background-color: green;height: auto;}
+#Benefits {background-color: rgb(42, 141, 207);height: auto;}
+#About_me{background-color: rgb(228, 155, 19);height: auto;}
+
+img{max-width: 100%;}
+</style>
+</head>
+<body>
+
+<button class="tablink" onclick="openPage('Home', this, 'rgb(189, 21, 21)')" id="defaultOpen">Home</button>
+<button class="tablink" onclick="openPage('Process', this, 'green')" >Process</button>
+<button class="tablink" onclick="openPage('Benefits', this, 'rgb(42, 141, 207)')">Benefits</button>
+<button class="tablink" onclick="openPage('About_me', this, 'rgb(228, 155, 19)')">About me</button>
+
+<div id="Home" class="tabcontent">
+    <div class="box1">
+  <h1><div align="center">VPN</div></h1>
+  <h3>VPN คืออะไร</h3>
+   <div align="center"><P>VPN : Virtual Private Network เป็นฟังก์ชันทางเน็ตเวิร์คที่ใช้สำหรับทำให้การรับส่งข้อมูลบน Network มีความปลอดภัยมากยิ่งขึ้น โดยความปลอดภัยที่มากยิ่งขึ้นนั้นมากจากการที่ VPN เป็นการสร้าง Gateway เฉพาะในการรับส่งข้อมูล มีการ login password ในการเข้าถึงทุกคร้ัง หรือเรียกได้ว่า VPN เป็นสร้างเน็ตเวิร์คส่วนตัวขึ้นมาใช้งานนั่นเอง</P></div>
+   <div align="center"><img src="https://www.praguepost.com/wp-content/uploads/2017/08/vpn.png" ></div>
+   <h2>VPN ทำอะไรได้บ้าง</h2>
+    <P>- เเม้ว่า การติดต่อสื่อสารของเราได้ติดต่อออกไปนอก LAN การติดต่อสื่อสารก็ยังมีความปลอดภัย</P>
+    <P>- VPN network สามารถทำได้ทุกที่</P>
+    <P>- มีการเข้ารหัสข้อมูลก่อนส่งทุกครั้ง</P>
+    <P>- เราสามารถที่จะเข้าถึงเว็บไซต์ที่โดนบล๊อคการบริการเช่น เราอยู่ในไทยเราโดยบล้อคห้ามเข้า Facebook เราสามารถเปลี่ยนภูมิภาคของ VPN server ไปใช้ของอเมริกาเเละสามารถเล่นตามปกติได้ </P>
+    <p>- สามารถปกปิดตัวตนได้ เนื่องจากว่า เราสามารถปลอมเป็นผู้ใช้จาก ประเทศ A ทั้งๆที่เราอยู่ประเทศ B ได้</p>     
+    </div>
+</div>
+
+<div id="Process" class="tabcontent">
+  <h3><div align="center">News</div></h3>
+ 
+</div>
+
+<div id="Benefits" class="tabcontent">
+  <h3>Contact</h3>
+  <p>Get in touch, or swing by for a cup of coffee.</p>
+</div>
+
+<div id="About_me" class="tabcontent">
+  <h3>About</h3>
+  <p>Who we are and what we do.</p>
+</div>
+
+<script>
+function openPage(pageName,elmnt,color) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablink");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].style.backgroundColor = "";
+    }
+    document.getElementById(pageName).style.display = "block";
+    elmnt.style.backgroundColor = color;
+
+}
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>
+     
+</body>
+</html> 

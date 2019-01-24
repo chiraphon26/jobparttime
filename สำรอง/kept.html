@@ -1,0 +1,19 @@
+<?php 
+$stmt = $pdo->prepare("SELECT * FROM tb_job JOIN tb_image ON tb_job.job_id = tb_image.job_id WHERE job_store_name LIKE ? ");
+if (!empty($_GET)) // ถ้ามีค่าที่ส่งมาจากฟอร์ม $value = '%' . $_GET["keyword"] . '%'; // ดึงค่าที่ส่งมากำหนดให้กับตัวแปรเงื่อนไข
+$value = '%' . $_GET["keyword"] . '%'; 
+$stmt->bindParam(1, $value); // กำหนดชื่อตัวแปรเงื่อนไขที่จุดที่กำหนด ? ไว้ $stmt->execute(); // เรมิ่คน้หา 
+$stmt->execute();
+?> 
+<?php while ($row = $stmt->fetch()) : ?> 
+<div id="myShow">
+<div style="padding: 15px; text-align: center">
+<a href="Detail_job.php?job_id=<?php echo $row["job_id"]; ?>">
+<img src="images/upload/<?php echo $row["image_name"]; ?>.jpg" width="200" height="150">
+                        <div id="main-content" class="col-md-12">
+                                <div class="box" style="padding-bottom:50px;">
+                                <p><?php echo $row["job_store_name"]; ?></p><br>
+</div> 
+</div>
+<?php endwhile; ?> 
+</div>                          
